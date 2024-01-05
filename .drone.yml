@@ -2,6 +2,12 @@ kind: pipeline
 type: kubernetes
 name: default
 
+trigger:
+  event:
+    - push
+    - pull_request
+    - custom
+
 steps:
   - name: test
     image: golang
