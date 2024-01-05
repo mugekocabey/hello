@@ -1,16 +1,10 @@
 kind: pipeline
-type: kubernetes
+type: docker
 name: default
-
-trigger:
-  event:
-    - push
-    - pull_request
-    - custom
 
 steps:
   - name: test
     image: golang
     commands:
-      - go test
       - go build
+      - go test
